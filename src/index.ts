@@ -1,3 +1,5 @@
 import day1 from './day1';
+import day1Input from './inputs/day1.json';
 
-day1();
+const day1Result = day1(day1Input);
+console.log('Day 1 Result:', day1Result);

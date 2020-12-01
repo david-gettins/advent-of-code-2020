@@ -1,11 +1,6 @@
-import input from './input.json';
-
-export default function solve(): void {
-  console.log(input);
+export default function solve(input: number[]): number {
   const [a, b] = find(input);
-  console.log(a, b);
-  const result = a * b;
-  console.log(result);
+  return a * b;
 }
 
 function find(input: number[]): [number, number] {
