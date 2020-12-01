@@ -1,6 +1,6 @@
 {
   "name": "@david-gettins/advent-of-code-2020",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "TypeScript solutions to the advent of code 2020 challenges.",
   "main": "lib/index.js",
   "scripts": {
