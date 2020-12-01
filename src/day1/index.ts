@@ -1,18 +1,59 @@
-export default function solve(input: number[]): number {
-  const [a, b] = find(input);
-  return a * b;
+export default function solve(input: number[]): [number, number] {
+  const [a, b] = find(input, 2);
+  const part1 = multiply(a, b);
+  const [c, d, e] = find(input, 3);
+  const part2 = multiply(c, d, e);
+
+  return [part1, part2];
 }
 
-function find(input: number[]): [number, number] {
-  for (let i = 0; i < input.length; i++) {
-    const a = input[i];
-    for (let j = 0; j < input.length; j++) {
-      const b = input[j];
-      if (a + b === 2020) {
-        return [a, b];
-      }
+function find(input: number[], length: number): number[] {
+  let result: number[] = [];
+  const combinations = combine(input, length);
+  for (const combination of combinations) {
+    if (sum(...combination) === 2020) {
+      result = combination;
+      break;
     }
   }
 
-  throw new Error('No numbers in the array sum to 2020');
+  if (result === []) {
+    throw new Error('No numbers in the array sum to 2020');
+  }
+
+  return result;
+}
+
+function* combine<T>(
+  array: T[],
+  n: number,
+  start = 0,
+  prev: T[] = [],
+): Generator<T[]> | Generator<T[], unknown, unknown> {
+  if (n <= 0) {
+    yield prev;
+    return;
+  }
+
+  for (let i = start; i <= array.length - n; i++) {
+    yield* combine(array, n - 1, i + 1, [...prev, array[i]]);
+  }
+}
+
+function multiply(...numbers: number[]): number {
+  let result = 1;
+  for (const num of numbers) {
+    result *= num;
+  }
+
+  return result;
+}
+
+function sum(...numbers: number[]): number {
+  let result = 0;
+  for (const num of numbers) {
+    result += num;
+  }
+
+  return result;
 }
