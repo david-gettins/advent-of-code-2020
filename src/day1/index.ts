@@ -1,8 +1,10 @@
+import math from '../math';
+
 export default function solve(input: number[]): [number, number] {
   const [a, b] = find(input, 2);
-  const part1 = multiply(a, b);
+  const part1 = math.multiply(a, b);
   const [c, d, e] = find(input, 3);
-  const part2 = multiply(c, d, e);
+  const part2 = math.multiply(c, d, e);
 
   return [part1, part2];
 }
@@ -11,7 +13,7 @@ function find(input: number[], length: number): number[] {
   let result: number[] = [];
   const combinations = combine(input, length);
   for (const combination of combinations) {
-    if (sum(...combination) === 2020) {
+    if (math.sum(...combination) === 2020) {
       result = combination;
       break;
     }
@@ -38,22 +40,4 @@ function* combine<T>(
   for (let i = start; i <= array.length - n; i++) {
     yield* combine(array, n - 1, i + 1, [...prev, array[i]]);
   }
-}
-
-function multiply(...numbers: number[]): number {
-  let result = 1;
-  for (const num of numbers) {
-    result *= num;
-  }
-
-  return result;
-}
-
-function sum(...numbers: number[]): number {
-  let result = 0;
-  for (const num of numbers) {
-    result += num;
-  }
-
-  return result;
 }

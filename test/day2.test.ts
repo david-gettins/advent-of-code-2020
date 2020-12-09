@@ -1,4 +1,4 @@
-import day2 from '../src/day2/index';
+import day2 from '../src/day2';
 
 test('returns the number of passwords that conform to the policy', () => {
   const [result] = day2([

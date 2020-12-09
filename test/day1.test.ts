@@ -1,4 +1,4 @@
-import day1 from '../src/day1/index';
+import day1 from '../src/day1';
 
 test('returns the multiplication result of two numbers that sum to 2020', () => {
   const input = [900, 1020, 850, 1000];
