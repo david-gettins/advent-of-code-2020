@@ -3,11 +3,13 @@ import day2 from './day2';
 import day3 from './day3';
 import day4 from './day4';
 import day5 from './day5';
+import day6 from './day6';
 import day1Input from './inputs/day1.json';
 import day2Input from './inputs/day2.json';
 import day3Input from './inputs/day3.json';
 import day4Input from './inputs/day4.json';
 import day5Input from './inputs/day5.json';
+import day6Input from './inputs/day6.json';
 
 const day1Result = day1(day1Input);
 console.log('Day 1 Result:', day1Result);
@@ -23,3 +25,6 @@ console.log('Day 4 Result:', day4Result);
 
 const day5Result = day5(day5Input);
 console.log('Day 5 Result:', day5Result);
+
+const day6Result = day6(day6Input);
+console.log('Day 6 Result:', day6Result);
