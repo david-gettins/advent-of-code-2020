@@ -1,0 +1,10 @@
+[
+  { "id": "byr", "name": "Birth Year", "required": true },
+  { "id": "iyr", "name": "Issue Year", "required": true },
+  { "id": "eyr", "name": "Expiration Year", "required": true },
+  { "id": "hgt", "name": "Height", "required": true },
+  { "id": "hcl", "name": "Hair Color", "required": true },
+  { "id": "ecl", "name": "Eye Color", "required": true },
+  { "id": "pid", "name": "Passport ID", "required": true },
+  { "id": "cid", "name": "Country ID", "required": false }
+]
