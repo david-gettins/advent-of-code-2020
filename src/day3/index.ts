@@ -1,4 +1,4 @@
-import math from '../math';
+import maths from '../maths';
 
 export default function solve(input: string[]): [number, number] {
   const part1 = evaluateSlope(input, 3, 1);
@@ -11,7 +11,7 @@ export default function solve(input: string[]): [number, number] {
     evaluateSlope(input, 1, 2),
   ];
 
-  const part2 = math.multiply(...slopes);
+  const part2 = maths.multiply(...slopes);
 
   return [part1, part2];
 }
